@@ -13,10 +13,11 @@
   display: flex;
   justify-content: center;
   padding-top: 25px;
-  padding-bottom: 80px;
+  padding-bottom: 100px;
 }
 
 .topSection_heading > h1 {
+  color: white;
   width: 75vw;
   font-size: x-large;
   padding-bottom: 5px;
@@ -30,6 +31,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 10px 0;
 }
 
 .topSection_heading > p {
@@ -38,13 +40,15 @@
   font-weight: 400;
 }
 
-.bottomSection_row {
+.bottomSection_row,
+.bottomSection_row3 {
   color: white;
   display: flex;
   justify-content: center;
 }
 
-.bottomSection_cards {
+.bottomSection_cards,
+.bottomSection_pageview {
   width: 79vw;
   display: flex;
   justify-content: space-between;
@@ -52,7 +56,7 @@
 }
 
 .bottomSection_card {
-  width: 230px;
+  width: 250px;
   background-color: #202741;
   position: relative;
   top: -70px;
@@ -67,6 +71,46 @@
   padding: 0;
 }
 
+.pageview_card {
+  display: flex;
+  width: 250px;
+  height: 115px;
+  background-color: #202741;
+  position: relative;
+  top: -50px;
+  color: #8590bf;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.pageview_card .fab,
+.pageview_card .fas {
+  margin: 0;
+}
+
+.pageview_content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.pageview_card .row1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pageview_card .row2 > p {
+  font-size: 2em;
+  color: white;
+}
+
+.pageview_card .row2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .bottomSection_card_name {
   display: flex;
 }
@@ -75,6 +119,29 @@
   margin-top: 20px;
   font-size: 12px;
   font-weight: 500;
+}
+
+.bottomSection_heading {
+  color: white;
+  width: 75vw;
+  font-size: x-large;
+  padding-bottom: 5px;
+}
+
+.bottomSection_row2 {
+  width: 100%;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.bottomSection_heading {
+  color: white;
+  width: 79vw;
+  font-size: x-large;
+  padding-bottom: 5px;
+  position: relative;
+  top: -50px;
 }
 
 .facebook,
@@ -164,10 +231,11 @@
 
 /* media queries */
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
   .bottomSection_card,
   .topSection_heading > h1,
-  .topSection_heading {
+  .topSection_heading,
+  .pageview_card {
     width: 100%;
     margin-right: 0;
     flex-direction: column;
@@ -182,79 +250,4 @@
   .facebook {
     margin-top: 50px;
   }
-}
-
-.col-1,
-.col-10,
-.col-11,
-.col-12,
-.col-2,
-.col-3,
-.col-4,
-.col-5,
-.col-6,
-.col-7,
-.col-8,
-.col-9,
-.col-auto,
-.col-lg,
-.col-lg-1,
-.col-lg-10,
-.col-lg-11,
-.col-lg-12,
-.col-lg-2,
-.col-lg-3,
-.col-lg-4,
-.col-lg-5,
-.col-lg-6,
-.col-lg-7,
-.col-lg-8,
-.col-lg-9,
-.col-lg-auto,
-.col-md,
-.col-md-1,
-.col-md-10,
-.col-md-11,
-.col-md-12,
-.col-md-2,
-.col-md-3,
-.col-md-4,
-.col-md-5,
-.col-md-6,
-.col-md-7,
-.col-md-8,
-.col-md-9,
-.col-md-auto,
-.col-sm,
-.col-sm-1,
-.col-sm-10,
-.col-sm-11,
-.col-sm-12,
-.col-sm-2,
-.col-sm-3,
-.col-sm-4,
-.col-sm-5,
-.col-sm-6,
-.col-sm-7,
-.col-sm-8,
-.col-sm-9,
-.col-sm-auto,
-.col-xl,
-.col-xl-1,
-.col-xl-10,
-.col-xl-11,
-.col-xl-12,
-.col-xl-2,
-.col-xl-3,
-.col-xl-4,
-.col-xl-5,
-.col-xl-6,
-.col-xl-7,
-.col-xl-8,
-.col-xl-9,
-.col-xl-auto {
-  position: relative;
-  width: 100%;
-  /* padding-right: 15px; */
-  /* padding-left: 15px; */
 }
