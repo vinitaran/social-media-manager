@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="style/style.css" />
+    <title>Social Media Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Karla&family=Overpass&display=swap"
       rel="stylesheet"
@@ -20,6 +21,7 @@
       src="https://kit.fontawesome.com/182782d8f6.js"
       crossorigin="anonymous"
     ></script>
+    <!-- <script src="main.js"></script> -->
   </head>
   <body>
     <div class="topSection">
@@ -27,7 +29,12 @@
         <h1>Social Media Dashboard</h1>
         <p>Total Followers: 23,004</p>
       </div>
-      <div>Capsule</div>
+      <div class="wrapper-color-switch">
+        <input type="checkbox" id="input-color-switch" />
+        <label for="input-color-switch" class="color-switch">
+          <div class="color-switch-toggle"></div>
+        </label>
+      </div>
     </div>
     <div class="bottomSection">
       <div class="bottomSection_row">
@@ -96,9 +103,9 @@
         </div>
       </div>
       <div class="bottomSection_row3">
-        <div class="bottomSection_pageview">
-          <div class="pageview_card">
-            <div class="pageview_content">
+        <div class="bottomSection_overview">
+          <div class="overview_card">
+            <div class="overview_content">
               <div class="row1">
                 <p>Page Views</p>
                 <i class="fab fa-facebook-square fa-lg"></i>
@@ -112,8 +119,8 @@
               </div>
             </div>
           </div>
-          <div class="pageview_card">
-            <div class="pageview_content">
+          <div class="overview_card">
+            <div class="overview_content">
               <div class="row1">
                 <p>Likes</p>
                 <i class="fab fa-facebook-square fa-lg"></i>
@@ -127,8 +134,8 @@
               </div>
             </div>
           </div>
-          <div class="pageview_card">
-            <div class="pageview_content">
+          <div class="overview_card">
+            <div class="overview_content">
               <div class="row1">
                 <p>Likes</p>
                 <i class="fas fa-square fa-lg"></i>
@@ -142,8 +149,8 @@
               </div>
             </div>
           </div>
-          <div class="pageview_card">
-            <div class="pageview_content">
+          <div class="overview_card">
+            <div class="overview_content">
               <div class="row1">
                 <p>Profile Visits</p>
                 <i class="fas fa-square fa-lg"></i>
@@ -157,8 +164,8 @@
               </div>
             </div>
           </div>
-          <div class="pageview_card">
-            <div class="pageview_content">
+          <div class="overview_card">
+            <div class="overview_content">
               <div class="row1">
                 <p>Retweets</p>
                 <i class="fab fa-twitter fa-lg"></i>
@@ -172,8 +179,8 @@
               </div>
             </div>
           </div>
-          <div class="pageview_card">
-            <div class="pageview_content">
+          <div class="overview_card">
+            <div class="overview_content">
               <div class="row1">
                 <p>Likes</p>
                 <i class="fab fa-twitter fa-lg"></i>
@@ -187,8 +194,8 @@
               </div>
             </div>
           </div>
-          <div class="pageview_card">
-            <div class="pageview_content">
+          <div class="overview_card">
+            <div class="overview_content">
               <div class="row1">
                 <p>Likes</p>
                 <i class="fas fa-circle fa-lg"></i>
@@ -202,8 +209,8 @@
               </div>
             </div>
           </div>
-          <div class="pageview_card">
-            <div class="pageview_content">
+          <div class="overview_card">
+            <div class="overview_content">
               <div class="row1">
                 <p>Total Views</p>
                 <i class="fas fa-circle fa-lg"></i>
@@ -220,5 +227,34 @@
         </div>
       </div>
     </div>
+    <script>
+      //create a variable to monitor the input checkbox
+      const colorSwitch = document.getElementById("input-color-switch");
+
+      //when the input is clicked verify the state of the checkbox
+      colorSwitch.addEventListener("click", checkMode);
+
+      //1. see which state the checkbox is in
+      //2. if it is checked enable the dark mode by adding the class
+      //3. if it is not checked remove dark mode by removing the class
+      function checkMode() {
+        console.log("checking...");
+        if (colorSwitch.checked) {
+          console.log("dark on");
+          darkModeOn();
+        } else {
+          console.log("dark off");
+          darkModeOff();
+        }
+      }
+
+      function darkModeOn() {
+        document.body.classList.add("dark-mode");
+      }
+
+      function darkModeOff() {
+        document.body.classList.remove("dark-mode");
+      }
+    </script>
   </body>
 </html>

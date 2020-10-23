@@ -1,30 +1,46 @@
 * {
   margin: 0;
   box-sizing: border-box;
-  font-family: "Overpass", sans-serif;
+  font-family: "Karla", sans-serif;
   /* font-family: "Arimo", sans-serif; */
 }
 
+:root {
+  --top-section: #f7f9ff;
+  --bg-card: #f1f3fa;
+  --bottom-section: #fff;
+  --main-text-color: #000;
+  --hover-color: #e1e4f0;
+}
+
 .topSection {
-  width: 100%;
+  background-color: var(--top-section);
   /* height: 30vh; */
-  background-color: #1a1c2b;
-  color: white;
+  /* background-color: #1a1c2b;
+  /* color: white; */
+  color: var(--main-text-color);
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   padding-top: 25px;
   padding-bottom: 100px;
 }
 
 .topSection_heading > h1 {
-  color: white;
-  width: 75vw;
+  /* color: white; */
+  width: 60vw;
   font-size: x-large;
-  padding-bottom: 5px;
+  margin: 0;
+}
+
+.topSection_heading > p {
+  color: #8590bf;
+  font-size: 13px;
+  font-weight: 400;
 }
 
 .bottomSection {
-  background-color: #171924;
+  /* background-color: #171924; */
+  background-color: var(--bottom-section);
 }
 
 .bottomSection_card_followerCount {
@@ -34,21 +50,16 @@
   padding: 10px 0;
 }
 
-.topSection_heading > p {
-  color: #8590bf;
-  font-size: 13px;
-  font-weight: 400;
-}
-
 .bottomSection_row,
 .bottomSection_row3 {
-  color: white;
+  /* color: white; */
+  color: var(--main-text-color);
   display: flex;
   justify-content: center;
 }
 
 .bottomSection_cards,
-.bottomSection_pageview {
+.bottomSection_overview {
   width: 79vw;
   display: flex;
   justify-content: space-between;
@@ -57,7 +68,8 @@
 
 .bottomSection_card {
   width: 250px;
-  background-color: #202741;
+  /* background-color: #202741; */
+  background-color: var(--bg-card);
   position: relative;
   top: -70px;
   color: #8590bf;
@@ -69,43 +81,63 @@
   flex-direction: column;
   align-items: center;
   padding: 0;
+  cursor: pointer;
+  animation: transitionIn 1s;
 }
 
-.pageview_card {
+.overview_card {
   display: flex;
   width: 250px;
   height: 115px;
-  background-color: #202741;
+  /* background-color: #202741; */
+  background-color: var(--bg-card);
   position: relative;
   top: -50px;
   color: #8590bf;
   border-radius: 4px;
   margin-bottom: 20px;
+  cursor: pointer;
+  animation: transitionIn 1s;
 }
 
-.pageview_card .fab,
-.pageview_card .fas {
+.bottomSection_card:hover,
+.square:hover,
+.overview_card:hover {
+  background-color: var(--hover-color);
+  transform: scale(1.02);
+  transition: ease-in-out;
+  transition-duration: 0.3s;
+  box-shadow: 1px 1px 6px -1px rgba(150, 150, 150, 0.4);
+}
+
+.overview_card .fab,
+.overview_card .fas {
   margin: 0;
 }
 
-.pageview_content {
+.overview_content {
   width: 100%;
   display: flex;
   flex-direction: column;
   padding: 20px;
 }
 
-.pageview_card .row1 {
+.overview_card .row1 {
   display: flex;
   justify-content: space-between;
 }
 
-.pageview_card .row2 > p {
-  font-size: 2em;
-  color: white;
+.overview_card .row1 > p {
+  font-size: 0.8em;
 }
 
-.pageview_card .row2 {
+.overview_card .row2 > p {
+  font-size: 2em;
+  /* color: white; */
+  color: var(--main-text-color);
+}
+
+.overview_card .row2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -122,7 +154,8 @@
 }
 
 .bottomSection_heading {
-  color: white;
+  /* color: white; */
+  color: var(--main-text-color);
   width: 75vw;
   font-size: x-large;
   padding-bottom: 5px;
@@ -130,13 +163,13 @@
 
 .bottomSection_row2 {
   width: 100%;
-  color: white;
+  /* color: white; */
   display: flex;
   justify-content: center;
 }
 
 .bottomSection_heading {
-  color: white;
+  /* color: white; */
   width: 79vw;
   font-size: x-large;
   padding-bottom: 5px;
@@ -156,16 +189,22 @@
 
 .square {
   border: 3px transparent;
-  background-image: linear-gradient(#202741, #202741),
+  background-image: linear-gradient(var(--bg-card), var(--bg-card)),
     radial-gradient(circle at top left, #fdc260, #e35091);
   background-origin: border-box;
   background-clip: content-box, border-box;
   padding-top: 3px;
 }
 
+.square:hover {
+  background-image: linear-gradient(var(--hover-color), var(--hover-color)),
+    radial-gradient(circle at top left, #fdc260, #e35091);
+}
+
 .bottomSection_card_followerCount .count {
   font-size: 3em;
-  color: #fff;
+  /* color: #fff; */
+  color: var(--main-text-color);
   margin-bottom: 0;
   padding-bottom: 5px;
 }
@@ -224,18 +263,89 @@
   margin-top: 20px;
   border-radius: 2.5px;
   color: #fdc260;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-image: linear-gradient(45deg, #fdc260, #ebad61, #e475a7, #e35091);
 }
 
+/* animations */
+
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+    transform: rotateX(-180deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotateX(0);
+  }
+}
+
+/* Dark mode */
+.dark-mode {
+  --top-section: #1a1c2b;
+  --bg-card: #212841;
+  --bg-card-hover: #e1e4f0;
+  --bottom-section: #171924;
+  --main-text-color: #fff;
+  --hover-color: #2b3557;
+}
+
+/* toggle */
+
+.color-switch {
+  right: 11%;
+  width: 3em;
+  height: 1.5em;
+  border-radius: 10em;
+  background: linear-gradient(90deg, #399ad8, #31d192);
+  position: absolute;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.color-switch-toggle {
+  width: 1.2em;
+  height: 1.2em;
+  position: absolute;
+  border-radius: 10em;
+  background-color: var(--bg-card);
+  top: 2.4px;
+  left: 2.4px;
+  transition: all 250ms ease-in-out;
+}
+
+.color-switch::before {
+  content: "Dark Mode";
+  position: absolute;
+  color: #8590bf;
+  font-size: 0.9em;
+  display: inline-block;
+  width: 12em;
+  left: -5.5em;
+  top: 0.2em;
+}
+
+#input-color-switch:checked ~ label .color-switch-toggle {
+  transform: translatex(1.5em);
+}
+
+#input-color-switch:checked ~ .color-switch::before {
+  content: "Light Mode";
+}
+
+#input-color-switch {
+  display: none;
+}
+
 /* media queries */
 
-@media (max-width: 600px) {
+@media (max-width: 660px) {
   .bottomSection_card,
   .topSection_heading > h1,
   .topSection_heading,
-  .pageview_card {
+  .overview_card {
     width: 100%;
     margin-right: 0;
     flex-direction: column;
@@ -244,10 +354,24 @@
   .topSection {
     display: flex;
     flex-direction: column;
-    text-align: center;
+    align-items: center;
+  }
+
+  .topSection_heading {
+    width: 80%;
+    border-bottom: 1px solid #8590bf;
   }
 
   .facebook {
     margin-top: 50px;
+  }
+
+  .color-switch {
+    margin-top: 22px;
+  }
+
+  .wrapper-color-switch {
+    display: flex;
+    justify-content: start;
   }
 }
