@@ -6,11 +6,13 @@
 }
 
 :root {
-  --top-section: #f7f9ff;
-  --bg-card: #f1f3fa;
-  --bottom-section: #fff;
-  --main-text-color: #000;
-  --hover-color: #e1e4f0;
+  --top-section: #1a1c2b;
+  --bg-card: #212841;
+  --bg-card-hover: #e1e4f0;
+  --bottom-section: #171924;
+  --main-text-color: #fff;
+  --hover-color: #2b3557;
+  --hover-image: url("https://storage.googleapis.com/website-production/uploads/2016/07/google-analytics-display-ads-demographics.gif");
 }
 
 .topSection {
@@ -83,6 +85,7 @@
   padding: 0;
   cursor: pointer;
   animation: transitionIn 1s;
+  height: 205px;
 }
 
 .overview_card {
@@ -105,9 +108,39 @@
 .overview_card:hover {
   background-color: var(--hover-color);
   transform: scale(1.02);
-  transition: ease-in-out;
+  transition: ease-in-out 0.3s;
   transition-duration: 0.3s;
   box-shadow: 1px 1px 6px -1px rgba(150, 150, 150, 0.4);
+}
+
+.bottomSection_card:hover {
+  background: var(--hover-image);
+  background-size: cover;
+}
+
+.info {
+  position: absolute;
+  z-index: 3;
+  color: #fff;
+  opacity: 0;
+}
+
+.bottomSection_card:hover .info {
+  opacity: 1;
+}
+
+.bottomSection_card:hover p {
+  display: none;
+}
+
+.bottomSection_card:hover .btn {
+  /*   z-index: 1; */
+  transition: ease-in-out 0.1s;
+}
+
+.bottomSection_card:hover .fab,
+.bottomSection_card:hover .fas {
+  margin-bottom: 20px;
 }
 
 .overview_card .fab,
@@ -197,8 +230,10 @@
 }
 
 .square:hover {
-  background-image: linear-gradient(var(--hover-color), var(--hover-color)),
-    radial-gradient(circle at top left, #fdc260, #e35091);
+  border-top: 3px solid;
+  border-radius: 2px;
+  border-image-source: linear-gradient(90deg, #fdc260, #e35091);
+  border-image-slice: 2;
 }
 
 .bottomSection_card_followerCount .count {
@@ -284,12 +319,11 @@
 
 /* Dark mode */
 .dark-mode {
-  --top-section: #1a1c2b;
-  --bg-card: #212841;
-  --bg-card-hover: #e1e4f0;
-  --bottom-section: #171924;
-  --main-text-color: #fff;
-  --hover-color: #2b3557;
+  --top-section: #f7f9ff;
+  --bg-card: #f1f3fa;
+  --bottom-section: #fff;
+  --main-text-color: #000;
+  --hover-color: #e1e4f0;
 }
 
 /* toggle */
@@ -373,5 +407,8 @@
   .wrapper-color-switch {
     display: flex;
     justify-content: start;
+  }
+  bottomSection_card:hover .btn-primary {
+    padding-botttom: 100px;
   }
 }

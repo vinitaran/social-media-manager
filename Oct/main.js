@@ -25,3 +25,22 @@ function darkModeOn() {
 function darkModeOff() {
   document.body.classList.remove("dark-mode");
 }
+
+// function update() {
+//   const elem = document.getElementsByClassName("bottomSection_card");
+//   for (let i = 0; i < elem.length; i++) {
+//     elem[i].classList.add("animate__animated", "animate__flipInX");
+//   }
+//   setTimeout(function () {
+//     deselect();
+//   }, 1000);
+// }
+
+// function deselect() {
+//   const elem = document.getElementsByClassName("bottomSection_card");
+//   for (let i = 0; i < elem.length; i++) {
+//     elem[i].classList.remove("animate__animated", "animate__flipInX");
+//   }
+// }
+
+// elem.classList.add("animate__animated", "animate__flipInX");
