@@ -12,7 +12,7 @@
   --bottom-section: #171924;
   --main-text-color: #fff;
   --hover-color: #2b3557;
-  --hover-image: url("https://storage.googleapis.com/website-production/uploads/2016/07/google-analytics-display-ads-demographics.gif");
+  --hover-image: url("../images/dark-background.gif");
 }
 
 .topSection {
@@ -100,7 +100,7 @@
   border-radius: 4px;
   margin-bottom: 20px;
   cursor: pointer;
-  animation: transitionIn 1s;
+  animation: transitionIn 0.5s;
 }
 
 .bottomSection_card:hover,
@@ -109,13 +109,12 @@
   background-color: var(--hover-color);
   transform: scale(1.02);
   transition: ease-in-out 0.3s;
-  transition-duration: 0.3s;
-  box-shadow: 1px 1px 6px -1px rgba(150, 150, 150, 0.4);
+  box-shadow: 1px 1px 6px -1px rgba(102, 102, 102, 0.4);
 }
 
 .bottomSection_card:hover {
   background: var(--hover-image);
-  background-size: cover;
+  background-size: contain;
 }
 
 .info {
@@ -212,11 +211,11 @@
 
 .facebook,
 .twitter {
-  border-top: 3px solid #008df8;
+  border-top: 4px solid #008df8;
 }
 
 .circle {
-  border-top: 3px solid #c70020;
+  border-top: 4px solid #c70020;
   margin-right: 0;
 }
 
@@ -317,13 +316,14 @@
   }
 }
 
-/* Dark mode */
-.dark-mode {
+/* Light mode */
+.light-mode {
   --top-section: #f7f9ff;
   --bg-card: #f1f3fa;
   --bottom-section: #fff;
   --main-text-color: #000;
   --hover-color: #e1e4f0;
+  --hover-image: url("../images/light-background.gif");
 }
 
 /* toggle */
@@ -366,7 +366,7 @@
 }
 
 #input-color-switch:checked ~ .color-switch::before {
-  content: "Light Mode";
+  content: "Dark Mode";
 }
 
 #input-color-switch {
@@ -408,6 +408,7 @@
     display: flex;
     justify-content: start;
   }
+
   bottomSection_card:hover .btn-primary {
     padding-botttom: 100px;
   }
