@@ -12,7 +12,7 @@
   --bottom-section: #171924;
   --main-text-color: #fff;
   --hover-color: #2b3557;
-  --hover-image: url("../images/dark-background.gif");
+  --hover-image: url("./images/dark-background.gif");
 }
 
 .topSection {
@@ -323,7 +323,7 @@
   --bottom-section: #fff;
   --main-text-color: #000;
   --hover-color: #e1e4f0;
-  --hover-image: url("../images/light-background.gif");
+  --hover-image: url("./images/light-background.gif");
 }
 
 /* toggle */
